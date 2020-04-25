@@ -1,0 +1,20 @@
+{
+    "name": "huboshen/laravel-one-to-many-sync",
+    "type": "library",
+    "description": "Allow sync method for Laravel Has Many and Morph Many Relationship.",
+    "authors": [
+        {
+            "name": "Boshen Hu",
+            "email": "huboshen@hotmail.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "illuminate/database": "~5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Huboshen\\OneToManySync\\": "src/"
+        }
+    }
+}
