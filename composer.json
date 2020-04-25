@@ -15,5 +15,12 @@
         "psr-4": {
             "Huboshen\\OneToManySync\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Huboshen\\OneToManySync\\OneToManySyncServiceProvider"
+            ]
+        }
     }
 }
