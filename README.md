@@ -79,7 +79,7 @@ class PostPoly extends Model
 Synchronize the post with these comments with a "sync_one_to_many_morph" method
 
 ```php
-$pp->comments()->sync_one_to_many_morph(
+$post->comments()->sync_one_to_many_morph(
 [
     ['id' => 1, 'body' => 'update the comment where id = 1'],
     ['body' => 'this is a new comment without a id yet'],
