@@ -55,6 +55,26 @@ As a result, no matter how much comments the post originally have, the post woul
 1. comment with id is 1, with the "body" field updated as above.
 2. a **new** comment with "body" field is "this is a new comment without a id".
 
+**Don't want to delete things when synchronizing?**  
+No problem. Just pass false as a second parameter to indicate whether enabling the deletion behavior (default is true).
+
+```php
+$post->comments()->sync_one_to_many([
+    ['id' => 1, 'body' => 'update the comment where id = 1'],
+    ['body' => 'this is a new comment without a id yet'],
+], false);
+```
+
+**Don't want to update the timestamp of the parent model when synchronizing?**  
+No problem. Just pass false as a third parameter to indicate whether enabling a parent touch (default is true).
+
+```php
+$post->comments()->sync_one_to_many([
+    ['id' => 1, 'body' => 'update the comment where id = 1'],
+    ['body' => 'this is a new comment without a id yet'],
+], true, false);
+```
+
 ### Synchronizing with a morphMany relationship in Laravel
 
 When a post has many comments with a morphMany relationship
@@ -86,7 +106,8 @@ $post->comments()->sync_one_to_many_morph(
 ]);
 ```
 
-The result will be similar to the previous hasMany example.
+The result will be similar to the previous hasMany example.  
+"sync_one_to_many_morph" method has the second parameter for controlling deletion and the third paramter for controlling parent touch as well.
 
 ## License
 
